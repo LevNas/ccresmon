@@ -19,7 +19,8 @@ readonly ENV_CPU_THRESHOLD="CCRESMON_CPU_THRESHOLD"
 readonly ENV_DISKIO_THRESHOLD="CCRESMON_DISKIO_THRESHOLD"
 
 # ディスクI/Oキャッシュファイル (DEC-002)
-readonly DISKIO_CACHE_FILE="/tmp/ccresmon_diskstats_$(id -u)"
+DISKIO_CACHE_FILE="/tmp/ccresmon_diskstats_$(id -u)"
+readonly DISKIO_CACHE_FILE
 readonly DISKIO_CACHE_MAX_AGE=60  # 秒
 
 # ==============================================================================

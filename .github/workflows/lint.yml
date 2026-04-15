@@ -1,0 +1,35 @@
+name: lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout plugin
+        uses: actions/checkout@v4
+        with:
+          path: plugin
+
+      - name: Checkout claudecode-plugins
+        uses: actions/checkout@v4
+        with:
+          repository: LevNas/claudecode-plugins
+          path: claudecode-plugins
+
+      - name: Run SKILL.md linter
+        run: bash claudecode-plugins/scripts/lint-skills.sh plugin
+
+  bats-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install bats
+        run: sudo apt-get update && sudo apt-get install -y bats
+
+      - name: Run BATS tests
+        run: bats tests/ccresmon.bats

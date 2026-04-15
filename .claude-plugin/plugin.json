@@ -1,0 +1,11 @@
+{
+  "name": "ccresmon",
+  "description": "Resource monitor hook for Claude Code. Checks memory, CPU, and disk I/O before Agent/Bash tool execution to prevent overload.",
+  "version": "0.2.0",
+  "author": {
+    "name": "LevNas"
+  },
+  "repository": "https://github.com/LevNas/ccresmon",
+  "license": "MIT",
+  "keywords": ["resource-monitor", "hooks", "preToolUse", "safety"]
+}
